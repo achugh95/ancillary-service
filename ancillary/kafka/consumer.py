@@ -1,4 +1,5 @@
 import time
+import os
 from concurrent.futures.thread import ThreadPoolExecutor
 from typing import List
 
@@ -43,7 +44,7 @@ class AncillaryService:
         )
         # print(f"REDIS: {self.redis}")
         if packet_data.get("last_chunk_flag"):
-            time.sleep(10)
+            time.sleep(60)
             output = sorted(self.redis.get(resource_id).items())
             final_array = []
             for packet_index, packet_output in output:
@@ -71,6 +72,7 @@ class AncillaryService:
 
 
 def downstream_service(resource_id: int, data: List[int]):
+    os.makedirs('downstream_data', exist_ok=True)
     with open(file=f"downstream_data/{resource_id}.txt", mode="w+") as f:
         for item in data:
             f.write(f"{item}\n")
