@@ -14,7 +14,7 @@ Build a “service” that does the following three jobs:
 ## Assumptions
 * The service needs to be highly scalable. 
   * Hence, we will need a Redis instance. For the purpose of assignment, I have used in-memory cache. 
-  * Ancillary Service is a long-running job 'asynchronous' job. It can be used in a 'synchronous' manner also but that would mean we cannot scale this service for high traffic rate.
+  * Ancillary Service is a long-running 'asynchronous' job. It can be used in a 'synchronous' manner also but that would mean we cannot scale this service for high traffic rate.
 
 
 ---
@@ -35,9 +35,9 @@ python 3.7 or higher
 
 ### Clone Project to your directory
 
-`git clone https://github.com/achugh95/cran.git`
+`https://github.com/achugh95/ancillary-service`
 
-`cd cran`
+`cd ancillary-service`
 
 ### Check python version on your development system
 
