@@ -6,6 +6,13 @@ from typing import List
 
 class AncillaryService:
     redis = {}
+    # data - 100 packets --> 1000 words => 100 * 1000 = 1 L --> 1 MB
+    # 32000 --> 512 mb [X]
+    # 32 GB || 64 GB
+    # Master-Slave --> 2 GB container -- [16] primary [16] secondary --> 64 GB
+    # Time
+    # 1. Database - Mongo | Dynamo
+    # 2. Time, Cost, Persistence, Sorting*
     executor = ThreadPoolExecutor()
 
     def set_data_in_redis(
